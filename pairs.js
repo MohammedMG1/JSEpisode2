@@ -18,7 +18,32 @@
 *       pairs() returns []
 ****************************************************************/
 function pairs(names) {
-  // Your code goes here
+  let asdf = [];
+  // if (names.length) {
+  //   for (let i = 0; i < names.length; i++) {
+  //     asdf.push([names.getRandom(), names.getRandom()]);
+  //   }
+  //   if (names.length % 2 !== 0) {
+  //     asdf.push(names.getRandom());
+  //     return asdf
+  //   }
+  //   return asdf
+  // }
+  // else {
+  //   return [];
+  // }
+  if (names) {
+    while (names.length > 1) {
+      asdf.push([names.getRandom(), names.getRandom()])
+    }
+    if (names.length === 1) {
+      asdf.push([names[0]])
+    }
+    return asdf
+
+  } else {
+    return []
+  }
 }
 
 module.exports = pairs;
@@ -38,7 +63,7 @@ module.exports = pairs;
 * console.log(numbers);  // [1, 2, 4] (missing the random element)
 ************************************************/
 Array.prototype.getRandom = function () {
-  return this.splice(Math.floor(Math.random()*this.length), 1)[0];
+  return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 }
 
 console.log(pairs(['Asis', 'Hamsa', 'Fawas', 'Mishmish', 'Hussein', 'Lailz', 'Mr Potato']));
